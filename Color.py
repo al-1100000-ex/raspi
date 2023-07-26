@@ -31,7 +31,7 @@ def setColor(r_val, g_val, b_val):  # change duty cycle for three pins to r_val,
     pwmBlue.ChangeDutyCycle(b_val)
 
 
-the_colors = [(255,0,00), (255,255,255), (0,0,255)]
+the_colors = [(255, 0, 0), (255, 255, 255), (0, 0, 255)]
 
 def loop():
     while True:
