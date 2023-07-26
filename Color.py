@@ -45,17 +45,18 @@ def loop():
         # time.sleep(1)
         if on:
             GPIO.output(pins, GPIO.HIGH)
-            if 60 < sleep_timer <= 100:
+            if 80 < sleep_timer <= 100:
                 setColor(100, 0, 100)
                 print('Countdown started!')
-            elif 30 < sleep_timer <= 60:
+            elif 60 < sleep_timer <= 60:
                 setColor(0, 35, 100)
                 print('Warning!!')
             else:
                 setColor(0, 100, 100)
                 print('DANGER!!')
         else:
-            GPIO.output(pins, GPIO.LOW)
+            for i in pins:
+                GPIO.output(i, GPIO.LOW)
             print('off')
         time.sleep(sleep_timer/100)
         on = not on
