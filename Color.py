@@ -35,6 +35,7 @@ the_colors = [(100, 0, 0), (100, 100, 100), (0, 0, 100)]
 
 def loop():
     sleep_timer = 100
+    on = True
     while sleep_timer > 1:
         # r = random.randint(0, 100)  # get a random in (0,100)
         # g = random.randint(0, 100)
@@ -42,8 +43,21 @@ def loop():
         # setColor(r, g, b)  # set random as a duty cycle value
         # print('r=%d, g=%d, b=%d ' % (r, g, b))
         # time.sleep(1)
-        setColor(100, 0, 0)
+        if on:
+            GPIO.output(pins, GPIO.HIGH)
+            if 60 < sleep_timer <= 100:
+                setColor(100, 0, 100)
+                print('Countdown started!')
+            elif 30 < sleep_timer <= 60:
+                setColor(0, 35, 100)
+                print('Warning!!')
+            else:
+                setColor(0, 100, 100)
+                print('DANGER!!')
+        else:
+            GPIO.output(pins, GPIO.LOW)
         time.sleep(sleep_timer/100)
+        on = not on
         sleep_timer = sleep_timer-1
 
 
