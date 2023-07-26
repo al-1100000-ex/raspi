@@ -16,7 +16,7 @@ def loop():
     buzz = True
     ct = 100
     while True:
-        sl = ct
+        sl = ct/100
         if buzz:  # on
             GPIO.output(buzzerPin, GPIO.LOW)
             GPIO.output(lightPin, GPIO.HIGH)
