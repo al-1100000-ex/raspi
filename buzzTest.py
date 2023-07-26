@@ -14,8 +14,9 @@ def setup():
 
 def loop():
     buzz = True
+    ct = 100
     while True:
-        sl = 1
+        sl = ct
         if buzz:  # on
             GPIO.output(buzzerPin, GPIO.LOW)
             GPIO.output(lightPin, GPIO.HIGH)
@@ -24,6 +25,7 @@ def loop():
             GPIO.output(buzzerPin, GPIO.HIGH)
             GPIO.output(lightPin, GPIO.LOW)
         time.sleep(sl)
+        ct -= ct
         buzz = not buzz
 
 
