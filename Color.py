@@ -56,6 +56,7 @@ def loop():
                 print('DANGER!!')
         else:
             GPIO.output(pins, GPIO.LOW)
+            print('off')
         time.sleep(sleep_timer/100)
         on = not on
         sleep_timer = sleep_timer-1
