@@ -34,16 +34,17 @@ def setColor(r_val, g_val, b_val):  # change duty cycle for three pins to r_val,
 the_colors = [(100, 0, 0), (100, 100, 100), (0, 0, 100)]
 
 def loop():
-    while True:
+    sleep_timer = 100
+    while sleep_timer > 1:
         # r = random.randint(0, 100)  # get a random in (0,100)
         # g = random.randint(0, 100)
         # b = random.randint(0, 100)
         # setColor(r, g, b)  # set random as a duty cycle value
         # print('r=%d, g=%d, b=%d ' % (r, g, b))
         # time.sleep(1)
-        for i in the_colors:
-            setColor(i[0], i[1], i[2])
-            time.sleep(1)
+        setColor(100, 0, 0)
+        time.sleep(sleep_timer/100)
+        sleep_timer -= 1
 
 
 
