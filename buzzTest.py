@@ -19,10 +19,10 @@ def loop():
         if buzz:  # on
             GPIO.output(buzzerPin, GPIO.LOW)
             GPIO.output(lightPin, GPIO.HIGH)
+            sl = 0.2
         else:  # off
             GPIO.output(buzzerPin, GPIO.HIGH)
             GPIO.output(lightPin, GPIO.LOW)
-            sl = 0.2
         time.sleep(sl)
         buzz = not buzz
 
