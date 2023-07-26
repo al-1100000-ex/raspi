@@ -55,8 +55,7 @@ def loop():
                 setColor(0, 100, 100)
                 print('DANGER!!')
         else:
-            for i in pins:
-                GPIO.output(i, GPIO.LOW)
+            setColor(100, 100, 100)
             print('off')
         time.sleep(sleep_timer/100)
         on = not on
