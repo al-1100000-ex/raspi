@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
-buzzerPin = 12
-lightPin = 11
+buzzerPin = 11
+lightPin = 12
 
 
 def setup():
