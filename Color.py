@@ -31,8 +31,6 @@ def setColor(r_val, g_val, b_val):  # change duty cycle for three pins to r_val,
     pwmBlue.ChangeDutyCycle(b_val)
 
 
-the_colors = [(100, 0, 0), (100, 100, 100), (0, 0, 100)]
-
 def loop():
     sleep_timer = 100
     on = True
@@ -48,7 +46,7 @@ def loop():
             if 80 < sleep_timer <= 100:
                 setColor(100, 0, 100)
                 print('Countdown started!')
-            elif 60 < sleep_timer <= 60:
+            elif 60 < sleep_timer <= 80:
                 setColor(0, 35, 100)
                 print('Warning!!')
             else:
@@ -57,10 +55,9 @@ def loop():
         else:
             setColor(100, 100, 100)
             print('off')
-        time.sleep(sleep_timer/100)
+        time.sleep(sleep_timer / 100)
         on = not on
-        sleep_timer = sleep_timer-1
-
+        sleep_timer = sleep_timer - 1
 
 
 def destroy():
