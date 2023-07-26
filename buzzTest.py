@@ -2,11 +2,14 @@ import RPi.GPIO as GPIO
 import time
 
 buzzerPin = 11
+lightPin = 12
 
 
 def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(buzzerPin, GPIO.OUT)
+    GPIO.setup(lightPin, GPIO.OUT)
+    GPIO.setup(lightPin, GPIO.LOW)
 
 
 def loop():
@@ -14,9 +17,11 @@ def loop():
     while True:
         if buzz:
             GPIO.output(buzzerPin, GPIO.LOW)
+            GPIO.output(lightPin, GPIO.HIGH)
             print('buzz')
         else:
             GPIO.output(buzzerPin, GPIO.HIGH)
+            GPIO.output(lightPin, GPIO.LOW)
             print('stop')
         time.sleep(1)
         buzz = not buzz
