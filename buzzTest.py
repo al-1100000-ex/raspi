@@ -15,7 +15,7 @@ def setup():
 def loop():
     buzz = True
     ct = 100
-    while True:
+    while ct > 0:
         sl = ct/100
         if buzz:  # on
             GPIO.output(buzzerPin, GPIO.LOW)
@@ -29,6 +29,11 @@ def loop():
         buzz = not buzz
 
 
+def loop_end():
+    GPIO.output(buzzerPin, GPIO.LOW)
+    GPIO.output(lightPin, GPIO.HIGH)
+
+
 def destroy():
     GPIO.cleanup()
 
@@ -38,5 +43,6 @@ if __name__ == '__main__':
     setup()
     try:
         loop()
+        loop_end()
     except KeyboardInterrupt:
         destroy()
