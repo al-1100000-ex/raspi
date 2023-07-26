@@ -20,6 +20,7 @@ def setup():
 
 def loop():
     while True:
+
         GPIO.output(ledPin, GPIO.HIGH)  # make ledPin output HIGH level to turn on led
         print('led turned on GIT ON TEST2 >>>')  # print information on terminal
         time.sleep(1)  # Wait for 1 second
