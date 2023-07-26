@@ -31,14 +31,20 @@ def setColor(r_val, g_val, b_val):  # change duty cycle for three pins to r_val,
     pwmBlue.ChangeDutyCycle(b_val)
 
 
+the_colors = [(255,0,00), (255,255,255), (0,0,255)]
+
 def loop():
     while True:
-        r = random.randint(0, 100)  # get a random in (0,100)
-        g = random.randint(0, 100)
-        b = random.randint(0, 100)
-        setColor(r, g, b)  # set random as a duty cycle value
-        print('r=%d, g=%d, b=%d ' % (r, g, b))
-        time.sleep(1)
+        # r = random.randint(0, 100)  # get a random in (0,100)
+        # g = random.randint(0, 100)
+        # b = random.randint(0, 100)
+        # setColor(r, g, b)  # set random as a duty cycle value
+        # print('r=%d, g=%d, b=%d ' % (r, g, b))
+        # time.sleep(1)
+        for i in the_colors:
+            setColor(i[0], i[1], i[2])
+            time.sleep(1)
+
 
 
 def destroy():
