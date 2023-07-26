@@ -44,7 +44,7 @@ def loop():
         # time.sleep(1)
         setColor(100, 0, 0)
         time.sleep(sleep_timer/100)
-        sleep_timer -= 1
+        sleep_timer = sleep_timer-1
 
 
 
