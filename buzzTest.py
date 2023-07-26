@@ -25,7 +25,7 @@ def loop():
             GPIO.output(buzzerPin, GPIO.HIGH)
             GPIO.output(lightPin, GPIO.LOW)
         time.sleep(sl)
-        ct -= ct
+        ct = ct - 1
         buzz = not buzz
 
 
